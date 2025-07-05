@@ -1,0 +1,716 @@
+    * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            }
+            
+            :root {
+                --squid-pink: #FF0096;
+                --squid-black: #000000;
+                --squid-white: #FFFFFF;
+                --squid-gray: #111111;
+                --squid-light-gray: #222222;
+                --squid-red: #e74c3c;
+                --squid-yellow: #f1c40f;
+                --squid-blue: #3498db;
+                --squid-green: #2ecc71;
+            }
+            
+            body {
+                background-color: var(--squid-black);
+                color: var(--squid-white);
+                overflow-x: hidden;
+                min-height: 100vh;
+                position: relative;
+                background-image: radial-gradient(circle at center, #1a1a1a 0%, #000 100%);
+            }
+            
+            /* Login Page */
+            .login-container {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                min-height: 100vh;
+                background: url('https://images.unsplash.com/photo-1634149921601-0d5f3c0b8e1a?q=80&w=1000') no-repeat center center;
+                background-size: cover;
+                position: relative;
+            }
+            
+            .login-container::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(0, 0, 0, 0.7);
+            }
+            
+            .login-card {
+                background: rgba(30, 30, 30, 0.9);
+                padding: 40px;
+                border-radius: 10px;
+                text-align: center;
+                width: 90%;
+                max-width: 500px;
+                z-index: 1;
+                border: 3px solid var(--squid-pink);
+                box-shadow: 0 0 30px rgba(255, 0, 150, 0.5);
+            }
+            
+            .login-card h1 {
+                font-size: 3rem;
+                margin-bottom: 30px;
+                color: var(--squid-pink);
+                text-transform: uppercase;
+                letter-spacing: 3px;
+            }
+            
+            .login-form {
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+            }
+            
+            .form-group {
+                display: flex;
+                flex-direction: column;
+                text-align: left;
+            }
+            
+            .form-group label {
+                margin-bottom: 8px;
+                font-weight: 600;
+                color: var(--squid-white);
+            }
+            
+            .form-group input {
+                padding: 15px;
+                background: var(--squid-light-gray);
+                border: 1px solid #444;
+                border-radius: 5px;
+                color: var(--squid-white);
+                font-size: 1rem;
+            }
+            
+            .form-group input:focus {
+                outline: none;
+                border-color: var(--squid-pink);
+            }
+            
+            .login-btn {
+                background: var(--squid-pink);
+                color: var(--squid-white);
+                border: none;
+                padding: 15px;
+                font-size: 1.2rem;
+                font-weight: bold;
+                text-transform: uppercase;
+                border-radius: 5px;
+                cursor: pointer;
+                transition: all 0.3s;
+                margin-top: 10px;
+            }
+            
+            .login-btn:hover {
+                background: #b3006e;
+                transform: translateY(-3px);
+                box-shadow: 0 5px 15px rgba(255, 0, 150, 0.4);
+            }
+            
+            /* Main Content */
+            .main-content {
+                display: none;
+                padding: 20px;
+                max-width: 1200px;
+                margin: 0 auto;
+            }
+            
+            /* Header */
+            header {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 20px 0;
+                margin-bottom: 40px;
+                border-bottom: 2px solid var(--squid-pink);
+            }
+            
+            .logo-placeholder {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                color: var(--squid-pink);
+                font-weight: bold;
+            }
+            
+            nav ul {
+                display: flex;
+                list-style: none;
+                gap: 25px;
+            }
+            
+            nav a {
+                color: var(--squid-white);
+                text-decoration: none;
+                font-size: 1.1rem;
+                font-weight: 600;
+                text-transform: uppercase;
+                letter-spacing: 1px;
+                padding: 8px 15px;
+                border-radius: 5px;
+                transition: all 0.3s ease;
+                position: relative;
+            }
+            
+            nav a::after {
+                content: '';
+                position: absolute;
+                bottom: -5px;
+                left: 0;
+                width: 0;
+                height: 2px;
+                background: var(--squid-pink);
+                transition: width 0.3s ease;
+            }
+            
+            nav a:hover::after {
+                width: 100%;
+            }
+            
+            nav a.active {
+                color: var(--squid-pink);
+            }
+            
+            /* Avatar Creation */
+            .avatar-section {
+                background: var(--squid-gray);
+                padding: 40px;
+                border-radius: 10px;
+                margin-bottom: 40px;
+                border: 2px solid var(--squid-pink);
+            }
+            
+            .section-title {
+                text-align: center;
+                font-size: 2.5rem;
+                margin-bottom: 30px;
+                color: var(--squid-pink);
+                text-transform: uppercase;
+                letter-spacing: 3px;
+                position: relative;
+            }
+            
+            .section-title::after {
+                content: '';
+                position: absolute;
+                bottom: -10px;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 200px;
+                height: 3px;
+                background: linear-gradient(90deg, transparent, var(--squid-pink), transparent);
+            }
+            
+            .avatar-form {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 30px;
+                max-width: 800px;
+                margin: 0 auto;
+            }
+            
+            .avatar-preview {
+                background: var(--squid-light-gray);
+                border-radius: 10px;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                padding: 30px;
+                border: 2px dashed #444;
+            }
+            
+            .avatar-image {
+                width: 150px;
+                height: 150px;
+                border-radius: 50%;
+                background: var(--squid-black);
+                margin-bottom: 20px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-size: 4rem;
+                color: var(--squid-pink);
+                border: 3px solid var(--squid-pink);
+            }
+            
+            .avatar-details {
+                text-align: center;
+            }
+            
+            .avatar-details h3 {
+                font-size: 1.8rem;
+                margin-bottom: 5px;
+                color: var(--squid-white);
+            }
+            
+            .avatar-details p {
+                font-size: 1.4rem;
+                color: var(--squid-pink);
+                font-weight: bold;
+            }
+            
+            .avatar-form-right {
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+            }
+            
+            .create-btn {
+                background: var(--squid-pink);
+                color: var(--squid-white);
+                border: none;
+                padding: 15px;
+                font-size: 1.2rem;
+                font-weight: bold;
+                text-transform: uppercase;
+                border-radius: 5px;
+                cursor: pointer;
+                transition: all 0.3s;
+                margin-top: 10px;
+            }
+            
+            .create-btn:hover {
+                background: #b3006e;
+            }
+            
+            /* Invitation Card */
+            .invitation-section {
+                display: none;
+                background: var(--squid-gray);
+                border-radius: 10px;
+                color: #000000;
+                margin-bottom: 40px;
+                text-align: center;
+                max-width: 800px;
+                margin: 0 auto 40px;
+            }
+            
+            .invitation-card {
+                background: #964B00;
+                padding: 20px;
+                border-radius: 10px;
+                border: 3px solid #000000;
+                box-shadow: 0 0 20px rgba(182, 174, 179, 0.3);
+                position: relative;
+            }
+            
+            .shapes-container {
+                display: flex;
+                justify-content: center;
+                gap: 40px;
+                margin: 30px 0;
+            }
+            
+            .shape {
+                width: 30px;
+                height: 30px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-size: 4rem;
+                color: #000000;
+                border-radius: 5px;
+            }
+            
+            .player-info {
+                margin-top: 30px;
+                font-size: 1.5rem;
+            }
+            
+            .player-info h3 {
+                color: #000000;
+                margin-bottom: 10px;
+            }
+            
+            .player-info p {
+                color: #000000;
+                font-weight: bold;
+            }
+            
+            .join-btn {
+                background: #000000;
+                color: var(--squid-white);
+                border: none;
+                padding: 15px 40px;
+                font-size: 1.3rem;
+                font-weight: bold;
+                text-transform: uppercase;
+                border-radius: 5px;
+                cursor: pointer;
+                transition: all 0.3s;
+                margin-top: 30px;
+            }
+            
+            .join-btn:hover {
+                background: #777c7b;
+                transform: translateY(-3px);
+                box-shadow: 0 5px 15px rgba(29, 17, 24, 0.4);
+            }
+            
+            /* Games Section */
+            .games-section {
+                display: none;
+            }
+            
+            .games-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+                gap: 30px;
+                margin-top: 30px;
+            }
+            
+            .game-card {
+                background: var(--squid-gray);
+                border-radius: 10px;
+                padding: 30px;
+                text-align: center;
+                transition: all 0.3s;
+                border: 2px solid #444;
+                position: relative;
+                overflow: hidden;
+            }
+            
+            .game-card:hover {
+                transform: translateY(-10px);
+                border-color: var(--squid-pink);
+                box-shadow: 0 10px 25px rgba(255, 0, 150, 0.2);
+            }
+            
+            .game-difficulty {
+                position: absolute;
+                top: 15px;
+                right: 15px;
+                padding: 5px 10px;
+                border-radius: 20px;
+                font-size: 0.8rem;
+                font-weight: bold;
+            }
+            
+            .easy {
+                background: var(--squid-green);
+                color: var(--squid-black);
+            }
+            
+            .medium {
+                background: var(--squid-yellow);
+                color: var(--squid-black);
+            }
+            
+            .hard {
+                background: var(--squid-red);
+                color: var(--squid-white);
+            }
+            
+            .game-icon {
+                font-size: 3.5rem;
+                margin: 20px 0;
+                color: var(--squid-pink);
+            }
+            
+            .game-card h3 {
+                font-size: 1.8rem;
+                margin-bottom: 15px;
+                color: var(--squid-white);
+            }
+            
+            .game-card p {
+                color: #aaa;
+                margin-bottom: 20px;
+                line-height: 1.6;
+            }
+            
+            .play-btn {
+                background: var(--squid-pink);
+                color: var(--squid-white);
+                border: none;
+                padding: 12px 30px;
+                border-radius: 5px;
+                cursor: pointer;
+                font-weight: bold;
+                text-transform: uppercase;
+                letter-spacing: 1px;
+                transition: all 0.3s;
+            }
+            
+            .play-btn:hover {
+                background: #b3006e;
+            }
+            
+            /* Game Screens */
+            .game-screen {
+                display: none;
+                background: var(--squid-black);
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                z-index: 1000;
+                padding: 20px;
+            }
+            
+            .game-container {
+                background: var(--squid-gray);
+                max-width: 800px;
+                margin: 50px auto;
+                padding: 30px;
+                border-radius: 10px;
+                border: 3px solid var(--squid-pink);
+                text-align: center;
+                position: relative;
+            }
+            
+            .game-header {
+                margin-bottom: 30px;
+            }
+            
+            .game-header h2 {
+                font-size: 2.5rem;
+                color: var(--squid-pink);
+                margin-bottom: 10px;
+            }
+            
+            .game-header p {
+                color: #aaa;
+                font-size: 1.2rem;
+            }
+            
+            .timer {
+                font-size: 2rem;
+                font-weight: bold;
+                margin: 20px 0;
+                color: var(--squid-red);
+            }
+            
+            .game-content {
+                margin: 30px 0;
+            }
+            
+            .buttons-container {
+                display: flex;
+                justify-content: center;
+                gap: 20px;
+                margin: 30px 0;
+            }
+            
+            .game-btn {
+                padding: 20px 40px;
+                font-size: 1.2rem;
+                font-weight: bold;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+                transition: all 0.3s;
+            }
+            
+            .safe {
+                background: var(--squid-green);
+            }
+            
+            .danger {
+                background: var(--squid-red);
+                color: white;
+            }
+            
+            .color-grid {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 20px;
+                max-width: 400px;
+                margin: 0 auto;
+            }
+            
+            .color-box {
+                height: 150px;
+                border-radius: 10px;
+                cursor: pointer;
+                transition: all 0.3s;
+            }
+            
+            .color-box:hover {
+                transform: scale(1.05);
+            }
+            
+            .door-container {
+                display: grid;
+                grid-template-columns: repeat(4, 1fr);
+                gap: 15px;
+                max-width: 600px;
+                margin: 0 auto;
+            }
+            
+            .door {
+                height: 200px;
+                background: var(--squid-light-gray);
+                border: 3px solid #444;
+                border-radius: 5px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-size: 2rem;
+                cursor: pointer;
+                transition: all 0.3s;
+            }
+            
+            .door:hover {
+                border-color: var(--squid-pink);
+            }
+            
+            .pattern-container {
+                display: flex;
+                justify-content: center;
+                gap: 15px;
+                margin: 30px 0;
+            }
+            
+            .pattern-color {
+                width: 80px;
+                height: 80px;
+                border-radius: 50%;
+                cursor: pointer;
+            }
+            
+            .stars-container {
+                display: flex;
+                justify-content: center;
+                flex-wrap: wrap;
+                gap: 20px;
+                margin: 30px 0;
+            }
+            
+            .star {
+                font-size: 3rem;
+                color: var(--squid-yellow);
+                opacity: 0;
+                animation: flash 1.5s;
+            }
+            
+            @keyframes flash {
+                0% { opacity: 0; }
+                50% { opacity: 1; }
+                100% { opacity: 0; }
+            }
+            
+            .count-input {
+                padding: 15px;
+                font-size: 1.5rem;
+                width: 200px;
+                text-align: center;
+                border-radius: 5px;
+                border: 2px solid var(--squid-pink);
+                background: var(--squid-light-gray);
+                color: white;
+            }
+            
+            /* Footer */
+            footer {
+                background: var(--squid-gray);
+                padding: 40px 0;
+                margin-top: 80px;
+                border-top: 2px solid var(--squid-pink);
+            }
+            
+            .footer-content {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                max-width: 1200px;
+                margin: 0 auto;
+                padding: 0 20px;
+                flex-wrap: wrap;
+                gap: 20px;
+            }
+            
+            .footer-item {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                font-size: 1.1rem;
+            }
+            
+            .footer-item i {
+                color: var(--squid-pink);
+                font-size: 1.5rem;
+            }
+            
+            .footer-item span {
+                font-weight: bold;
+                color: var(--squid-white);
+            }
+            
+            .footer-item .value {
+                color: var(--squid-pink);
+            }
+            
+            /* Results */
+            .result-screen {
+                display: none;
+                text-align: center;
+                padding: 40px;
+            }
+            
+            .result-icon {
+                font-size: 5rem;
+                margin-bottom: 30px;
+            }
+            
+            .win {
+                color: var(--squid-green);
+            }
+            
+            .lose {
+                color: var(--squid-red);
+            }
+            
+            .result-text {
+                font-size: 2.5rem;
+                margin-bottom: 20px;
+            }
+            
+            .result-points {
+                font-size: 1.8rem;
+                color: var(--squid-pink);
+                margin-bottom: 30px;
+            }
+            
+            /* Responsive */
+            @media (max-width: 768px) {
+                .avatar-form {
+                    grid-template-columns: 1fr;
+                }
+                
+                .shapes-container {
+                    gap: 15px;
+                }
+                
+                .shape {
+                    width: 60px;
+                    height: 60px;
+                    font-size: 2rem;
+                }
+                
+                nav ul {
+                    gap: 10px;
+                    flex-wrap: wrap;
+                    justify-content: center;
+                }
+                
+                .footer-content {
+                    flex-direction: column;
+                    align-items: center;
+                    text-align: center;
+                }
+            }

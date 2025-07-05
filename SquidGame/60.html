@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Squid Game | By Ayan</title>
+    <link rel="stylesheet" href="60.css">
+    <link rel="icon" href="face.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+       
+    </style>
+</head>
+<body>
+    <!-- Login Page -->
+    <div class="login-container">
+        <div class="login-card">
+            <h1>Squid Game</h1>
+            <p style="color: #aaa; margin-bottom: 30px; font-size: 1.2rem;">Enter the game and win 45.6 billion won</p>
+            <form class="login-form">
+                <div class="form-group">
+                    <label for="username">Player Name</label>
+                    <input type="text" id="username" placeholder="Enter your name" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Access Code</label>
+                    <input type="password" id="password" placeholder="Enter access code" required>
+                </div>
+                <button type="button" class="login-btn" id="loginBtn">Enter the Game</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <!-- Header -->
+        <header>
+            <div class="logo-placeholder"><img src="squidgame.png" alt="" width="130px"></div>
+            <nav>
+                <ul>
+                    <li><a href="#" class="active" data-page="home">Home</a></li>
+                    <li><a href="#" data-page="rules">Rules</a></li>
+                    <li><a href="#" data-page="winner">Winner</a></li>
+                    <li><a href="#" data-page="about">About</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <!-- Avatar Creation -->
+        <div class="avatar-section" id="home">
+            <h2 class="section-title">Create Your Player To Play Games</h2>
+            <div class="avatar-form">
+                <div class="avatar-preview">
+                    <div class="avatar-image">
+                        <img src="mask.png" alt="" width="100px">
+                    </div>
+                    <div class="avatar-details">
+                        <h3 id="preview-name">Player</h3>
+                        <p id="preview-number">#000</p>
+                    </div>
+                </div>
+                <div class="avatar-form-right">
+                    <div class="form-group">
+                        <label for="player-name">Player Name</label>
+                        <input type="text" id="player-name" placeholder="Enter your name">
+                    </div>
+                    <div class="form-group">
+                        <label for="player-number">Player Number</label>
+                        <input type="text" id="player-number" placeholder="Enter your number (001-456)">
+                    </div>
+                    <button class="create-btn" id="createAvatar" aria-placeholder=" ">Create Avatar</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Invitation Card -->
+        <div class="invitation-section">
+            <div class="invitation-card">
+                <h2>You Have Been Invited</h2>
+                <div class="shapes-container">
+                    <div class="shape">〇</div>
+                    <div class="shape">△</div>
+                    <div class="shape">☐</div>
+                </div>
+                <p style="font-size: 1.2rem; margin-bottom: 20px;">
+                    Welcome to the 6th Squid Game. 456 players compete for 45.6 billion won. 
+                    The rules are simple - win all 5 games to survive.
+                </p>
+                <div class="player-info">
+                    <h3>Player</h3>
+                    <p id="invitation-name">Player Name - #000</p>
+                </div>
+                <button class="join-btn" id="joinGame">Join the Game</button>
+            </div>
+        </div>
+
+        <!-- Games Section -->
+        <div class="games-section" id="games">
+            <h2 class="section-title">Deadly Games</h2>
+            <p style="text-align: center; margin-bottom: 30px; font-size: 1.2rem; max-width: 800px; margin-left: auto; margin-right: auto;">
+                You must complete all 5 games to win the prize. Each game increases in difficulty. 
+                Fail any game and you will be eliminated. Good luck.
+            </p>
+            
+            <div class="games-grid">
+                <div class="game-card">
+                    <div class="game-difficulty easy">Easy</div>
+                    <div class="game-icon">
+                        <i class="fas fa-hand-pointer"></i>
+                    </div>
+                    <h3>Don't Click the Wrong Button</h3>
+                    <p>3 buttons, only one is safe. You have 5 seconds to choose the correct button.</p>
+                    <button class="play-btn" data-game="button">Play Game</button>
+                </div>
+                
+                <div class="game-card">
+                    <div class="game-difficulty medium">Medium</div>
+                    <div class="game-icon">
+                        <i class="fas fa-palette"></i>
+                    </div>
+                    <h3>Lucky Color</h3>
+                    <p>Memorize the correct color in 3 seconds. Select it after the screen goes dark.</p>
+                    <button class="play-btn" data-game="color">Play Game</button>
+                </div>
+                
+                <div class="game-card">
+                    <div class="game-difficulty medium">Medium</div>
+                    <div class="game-icon">
+                        <i class="fas fa-door-open"></i>
+                    </div>
+                    <h3>Escape the Box</h3>
+                    <p>4 doors, only one is safe. You have 3 chances to find the correct door.</p>
+                    <button class="play-btn" data-game="door">Play Game</button>
+                </div>
+                
+                <div class="game-card">
+                    <div class="game-difficulty hard">Hard</div>
+                    <div class="game-icon">
+                        <i class="fas fa-bomb"></i>
+                    </div>
+                    <h3>Bomb Timer</h3>
+                    <p>Memorize the color pattern and reproduce it correctly within 30 seconds.</p>
+                    <button class="play-btn" data-game="pattern">Play Game</button>
+                </div>
+                
+                <div class="game-card">
+                    <div class="game-difficulty hard">Hard</div>
+                    <div class="game-icon">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h3>Quick Count</h3>
+                    <p>Count the stars that flash for 1.5 seconds. Enter the correct number.</p>
+                    <button class="play-btn" data-game="stars">Play Game</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Game Screens -->
+    <div class="game-screen" id="buttonGame">
+        <div class="game-container">
+            <div class="game-header">
+                <h2>Round 1: Don't Click the Wrong Button</h2>
+                <p>One of these buttons is safe. You have 5 seconds to choose.</p>
+                <div class="timer" id="buttonTimer">5</div>
+            </div>
+            <div class="buttons-container">
+                <button class="game-btn danger">ELIMINATE</button>
+                <button class="game-btn safe">SAFE</button>
+                <button class="game-btn danger">ELIMINATE</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="game-screen" id="colorGame">
+        <div class="game-container">
+            <div class="game-header">
+                <h2>Round 2: Lucky Color</h2>
+                <p>Memorize the correct color. You have 3 seconds.</p>
+                <div class="timer" id="colorTimer">3</div>
+            </div>
+            <div class="game-content">
+                <div class="color-grid">
+                    <div class="color-box" style="background-color: var(--squid-red);" data-color="red"></div>
+                    <div class="color-box" style="background-color: var(--squid-blue);" data-color="blue"></div>
+                    <div class="color-box" style="background-color: var(--squid-green);" data-color="green"></div>
+                    <div class="color-box" style="background-color: var(--squid-yellow);" data-color="yellow"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="game-screen" id="doorGame">
+        <div class="game-container">
+            <div class="game-header">
+                <h2>Round 3: Escape the Box</h2>
+                <p>4 doors, one is safe. You have 3 chances.</p>
+                <p>Chances left: <span id="chances">3</span></p>
+            </div>
+            <div class="door-container">
+                <div class="door" data-door="1">🚪 1</div>
+                <div class="door" data-door="2">🚪 2</div>
+                <div class="door" data-door="3">🚪 3</div>
+                <div class="door" data-door="4">🚪 4</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="game-screen" id="patternGame">
+        <div class="game-container">
+            <div class="game-header">
+                <h2>Round 4: Bomb Timer</h2>
+                <p>Memorize the color pattern and reproduce it.</p>
+                <div class="timer" id="patternTimer">30</div>
+            </div>
+            <div class="pattern-container" id="patternDisplay"></div>
+            <div class="pattern-container" id="patternInput"></div>
+        </div>
+    </div>
+
+    <div class="game-screen" id="starsGame">
+        <div class="game-container">
+            <div class="game-header">
+                <h2>Round 5: Quick Count</h2>
+                <p>Count the stars that flash for 1.5 seconds.</p>
+            </div>
+            <div class="stars-container" id="starsDisplay"></div>
+            <div class="game-content">
+                <input type="number" class="count-input" id="starCount" placeholder="How many stars?">
+                <button class="play-btn" id="submitCount" style="margin-top: 20px;">Submit</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Result Screen -->
+    <div class="game-screen result-screen" id="resultScreen">
+        <div class="game-container">
+            <div class="result-icon win">
+                <i class="fas fa-trophy"></i>
+            </div>
+            <div class="result-icon lose">
+                <i class="fas fa-skull"></i>
+            </div>
+            <div class="result-text">You Survived!</div>
+            <div class="result-text">Eliminated!</div>
+            <div class="result-points">You earned 500 points</div>
+            <button class="play-btn" id="continueBtn" style="margin-top: 30px;">Continue</button>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-item">
+                <i class="fas fa-code"></i>
+                <span>Game By <span class="value">Ayan!</span></span>
+            </div>
+            <div class="footer-item">
+                <i class="fas fa-trophy"></i>
+                <span>Reward: <span class="value">38.7M $</span></span>
+            </div>
+            <div class="footer-item">
+                <i class="fas fa-users"></i>
+                <span>Players: <span class="value">456</span></span>
+            </div>
+            <div class="footer-item">
+                <i class="fab fa-instagram"></i>
+                <span><span><a href="https://www.instagram.com/ayan.momin10?igsh=dW9lcWh3OTJsZmp6" style="text-decoration: none; color: #ffffff;">Instagram - </span>Ayan</span></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="60.js"></script>
+
+</body>
+</html>
